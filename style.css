@@ -1,0 +1,725 @@
+/* ===================================
+   COLLEGE TIMETABLE GENERATOR - CSS
+   =================================== */
+
+/* ─── RESET & BASE ─── */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+/* ─── CONTAINER ─── */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+/* ─── HEADER ─── */
+.header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 32px 20px;
+    text-align: center;
+}
+
+.header h1 {
+    font-size: 2.4em;
+    margin-bottom: 6px;
+}
+
+.header p {
+    font-size: 1.05em;
+    opacity: 0.88;
+}
+/* ─── CONTENT ─── */
+.content {
+    padding: 30px;
+}
+
+/* ─── INPUT SECTION ─── */
+.input-section {
+    background: #f8f9fa;
+    padding: 28px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+}
+.input-section h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.input-group {
+    margin-bottom: 18px;
+}
+.input-group label {
+    display: block;
+    margin-bottom: 7px;
+    font-weight: 600;
+    color: #333;
+}
+.input-group input,
+.input-group select {
+    width: 100%;
+    padding: 11px 14px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 0.95em;
+    transition: border 0.9s, box-shadow 0.3s;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.15);
+}
+
+.input-group small {
+    display: block;
+    margin-top: 5px;
+    color: #888;
+    font-size: 0.82em;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+}
+
+/* ─── INFO & WARNING BOXES ─── */
+.info-box {
+    background: #e7f3ff;
+    border-left: 4px solid #2196F3;
+    padding: 14px 18px;
+    margin-bottom: 22px;
+    border-radius: 6px;
+}
+
+.info-box p {
+    margin: 4px 0;
+    color: #0d47a1;
+    font-size: 0.9em;
+}
+
+.warning-box {
+    background: #fff3cd;
+    border-left: 4px solid #ffc107;
+    padding: 14px 18px;
+    margin-bottom: 22px;
+    border-radius: 6px;
+}
+
+.warning-box p {
+    margin: 4px 0;
+    color: #856404;
+    font-size: 0.9em;
+}
+
+/* ─── BUTTONS ─── */
+.btn {
+    padding: 11px 26px;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.95em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s;
+    margin-right: 8px;
+    margin-bottom: 8px;
+}
+.btn-primary {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: #fff;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 18px rgba(102, 126, 234, 0.4);
+}
+
+.btn-info {
+    background: #17a2b8;
+    color: #fff;
+}
+
+.btn-info:hover {
+    background: #138496;
+}
+
+.btn-secondary {
+    background: #6c757d;
+    color: #fff;
+}
+
+.btn-secondary:hover {
+    background: #5a6268;
+}
+
+.btn-success {
+    background: #28a745;
+    color: #fff;
+}
+
+.btn-success:hover {
+    background: #218838;
+}
+
+.btn-danger {
+    background: #dc3545;
+    color: #fff;
+}
+
+.btn-danger:hover {
+    background: #c82333;
+}
+/* ─── SUBJECT-TEACHER PAIR EDITOR ─── */
+.pair-editor {
+    background: #eef2ff;
+    border: 2px solid #c7d2fe;
+    border-radius: 12px;
+    padding: 20px;
+    margin-top: 16px;
+}
+
+.pair-row {
+    display: grid;
+    grid-template-columns: 40px 1fr 1fr 120px 30px;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 10px;
+    background: white;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.pair-row input,
+.pair-row select {
+    padding: 8px 12px;
+    border: 2px solid #c7d2fe;
+    border-radius: 6px;
+    font-size: 0.9em;
+}
+
+.pair-number {
+    text-align: center;
+    font-weight: 700;
+    color: #667eea;
+    font-size: 0.95em;
+}
+
+/* ─── TIMETABLE TABLE ─── */
+.timetable-wrapper {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 18px;
+    background: #fff;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+th {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: #fff;
+    padding: 14px 10px;
+    text-align: center;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    font-size: 0.88em;
+}
+
+td {
+    padding: 12px 8px;
+    text-align: center;
+    border: 1px solid #e4e4e4;
+    vertical-align: middle;
+}
+
+/* ─── TIME SLOT CELLS ─── */
+.time-slot {
+    background: #eef0f5;
+    font-weight: 700;
+    color: #3a3f6e;
+    font-size: 0.88em;
+    white-space: nowrap;
+    min-width: 110px;
+}
+
+.time-period-label {
+    display: block;
+    font-size: 0.72em;
+    color: #667eea;
+    font-weight: 600;
+    margin-bottom: 3px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+/* ─── SUBJECT CELLS ─── */
+.subject-cell {
+    background: linear-gradient(135deg, #eef5ff 0%, #f5eeff 100%);
+    transition: background 0.2s;
+}
+
+.subject-cell:hover {
+    background: linear-gradient(135deg, #dbeeff 0%, #ecdeff 100%);
+}
+
+.subject-name {
+    display: block;
+    font-weight: 700;
+    color: #667eea;
+    font-size: 0.92em;
+    margin-bottom: 5px;
+}
+
+.teacher-name {
+    display: block;
+    font-size: 0.8em;
+    color: #555;
+    margin-top: 3px;
+}
+
+.classroom-name {
+    display: block;
+    font-size: 0.8em;
+    color: #28a745;
+    margin-top: 3px;
+    font-weight: 500;
+}
+
+.year-btn {
+    padding: 8px 18px;
+    border: none;
+    border-radius: 6px;
+    background: #e0e0e0;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.year-btn.active {
+    background: #667eea;
+    color: white;
+}
+.nav-btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    background: #e0e0e0;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.nav-btn.active {
+    background: #667eea;
+    color: white;
+}
+/* ─── SESSION TYPE BADGES ─── */
+.session-type {
+    display: inline-block;
+    font-size: 0.7em;
+    padding: 3px 10px;
+    border-radius: 12px;
+    margin-top: 6px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+}
+
+.session-theory {
+    background: #e3f2fd;
+    color: #1565c0;
+}
+
+.session-lab {
+    background: #fff3e0;
+    color: #e65100;
+}
+
+.session-practical {
+    background: #f3e5f5;
+    color: #6a1b9a;
+}
+
+.session-tutorial {
+    background: #e8f5e9;
+    color: #2e7d32;
+}
+
+.session-default {
+    background: #f5f5f5;
+    color: #616161;
+}
+
+/* ─── BREAK CELLS ─── */
+.break-cell {
+    background: #fff8dc;
+    font-weight: 600;
+    color: #b8860b;
+    font-size: 0.88em;
+    letter-spacing: 0.3px;
+}
+
+/* ─── SUCCESS MESSAGE ─── */
+.success-message {
+    background: #d4edda;
+    border: 2px solid #28a745;
+    color: #155724;
+    padding: 14px;
+    border-radius: 10px;
+    margin: 22px 0 10px;
+    text-align: center;
+    font-weight: 600;
+}
+
+/* ─── STATISTICS SECTION ─── */
+.stats-section {
+    background: #f8f9fa;
+    padding: 24px;
+    border-radius: 12px;
+    margin: 24px 0;
+}
+
+.stats-section h3 {
+    color: #667eea;
+    margin-bottom: 18px;
+    font-size: 1.3em;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 18px;
+    margin-top: 16px;
+}
+
+.stat-card {
+    background: white;
+    padding: 18px;
+    border-radius: 10px;
+    border: 2px solid #e0e0e0;
+}
+
+.stat-card h4 {
+    color: #667eea;
+    margin-bottom: 14px;
+    font-size: 1.05em;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 8px;
+}
+
+.stat-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.stat-item:last-child {
+    border-bottom: none;
+}
+
+.stat-label {
+    color: #555;
+    font-size: 0.92em;
+}
+
+.stat-value {
+    color: #667eea;
+    font-weight: 700;
+    font-size: 0.95em;
+}
+
+.mapping-table {
+    width: 100%;
+    margin-top: 10px;
+    font-size: 0.88em;
+}
+
+.mapping-table td {
+    padding: 8px;
+    border: 1px solid #e0e0e0;
+}
+
+/* ─── LEGEND ─── */
+.legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 18px;
+    justify-content: center;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.82em;
+    color: #555;
+}
+
+.legend-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 4px;
+}
+
+/* ─── PRINT STYLES ─── */
+@media print {
+    body {
+        background: #fff;
+        padding: 0;
+    }
+
+    .container {
+        box-shadow: none;
+        border-radius: 0;
+    }
+
+    .input-section,
+    .print-btn,
+    .success-message {
+        display: none !important;
+    }
+
+    .header {
+        padding: 18px;
+    }
+
+    table {
+        font-size: 0.82em;
+    }
+
+    th,
+    td {
+        padding: 8px 5px;
+    }
+}
+
+/* ─── RESPONSIVE DESIGN ─── */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 1.6em;
+    }
+
+    table {
+        font-size: 0.78em;
+    }
+
+    th,
+    td {
+        padding: 8px 4px;
+    }
+
+    .pair-row {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.slot-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #eef2ff;
+    padding: 12px 16px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+#timeSlotEditor {
+    margin-top: 10px;
+}
+.slot-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #eef2ff;
+    padding: 14px 18px;
+    border-radius: 12px;
+    margin-top: 15px;
+}
+
+/* Button container */
+.slot-actions {
+    display: flex;
+    gap: 10px;
+}
+
+/* ADD BUTTON */
+.btn-add {
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-add:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(34,197,94,0.4);
+}
+
+/* REMOVE BUTTON */
+.btn-remove {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-remove:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(239,68,68,0.4);
+}
+table {
+    border-collapse: collapse;
+}
+
+th {
+    background: #6366f1;
+    color: white;
+}
+
+td {
+    font-size: 12px;
+}
+
+td[rowspan] {
+    vertical-align: middle;
+}
+td[rowspan] {
+    text-align: center;
+    vertical-align: middle;
+    font-weight: bold;
+    background: #f3f4f6;
+}
+.day-cell {
+    font-weight: 700;
+    font-size: 15px;
+    color: #1f2937;
+    background: #e0e7ff; /* light blue highlight */
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.btn {
+    background: #4f46e5;
+    color: white;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 8px;
+    margin: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background: #3730a3;
+}
+
+/* print css */
+body {
+    font-family: Arial;
+    padding: 10px;
+}
+
+/* 🔥 MAIN FIX: scale content */
+@media print {
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        border: 1px solid #000;
+        padding: 4px;
+        font-size: 10px;   /* 👈 reduce text */
+    }
+
+    th {
+        background: #6366f1;
+        color: white;
+    }
+
+    h2 {
+        font-size: 16px;
+        margin-bottom: 5px;
+    }
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+td {
+    word-wrap: break-word;
+}
+
+/* 🔘 Common Button Style (Same for all) */
+.btn {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    color: white;
+    
+    /* 🔥 Same color for all */
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+
+    transition: all 0.3s ease;
+}
+
+/* ✨ Hover Effect */
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(99, 102, 241, 0.4);
+}
+
+/* 🔽 Click Effect */
+.btn:active {
+    transform: scale(0.95);
+}
+
+/* ❌ Remove outline */
+.btn:focus {
+    outline: none;
+}
+
+.btn:active {
+    transform: scale(0.95);
+}
+
+.btn:focus {
+    outline: none;
+}
+

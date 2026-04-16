@@ -1,0 +1,42 @@
+{
+    "SE": 
+      [
+  { "subject": "CT", "teacher": "Prof.Mohini Thite", "type": "Lecture" },
+  { "subject": "DBMS", "teacher": "Prof. Smita Wadekar", "type": "Lecture" },
+  { "subject": "DBMS", "teacher": "Prof. Smita Wadekar", "type": "Lab" },
+  { "subject": "OS", "teacher": "Prof. Archana Khelurkar", "type": "Lecture" },
+  { "subject": "OS", "teacher": "Prof. Junaid Shaikh", "type": "Lab" },
+  { "subject": "MDM", "teacher": "Prof. Asma Shaikh", "type": "Lecture" },
+  { "subject": "MDM", "teacher": "Prof. Asma Shaikh", "type": "Lab" },
+  { "subject": "OE", "teacher": "Prof. Smita Wadekar", "type": "Lecture" },
+  { "subject": "DT", "teacher": "Prof. Asha Kantekar", "type": "Lab" },
+  { "subject": "BMD", "teacher": "Prof. Adhiti Jadhav", "type": "Lab" },
+  { "subject": "MiniProject", "teacher": "Prof.Mohini Thite", "type": "Lab" }
+],
+      
+
+  "TE": [
+    { "subject": "IOT", "teacher": "Prof.Sarita Bopalkar", "type": "Lecture" },
+    { "subject": "EHDF", "teacher": "Prof. Umakant Gohatre", "type": "Lecture" },
+    { "subject": "Webx", "teacher": "Prof.Archana Khelurkar", "type": "Lecture" },
+    { "subject": "Webx", "teacher": "Prof.Archana Khelurkar", "type": "Lab" },
+    { "subject": "CNS", "teacher": "Prof.Mohini Thite", "type": "Lecture" },
+    { "subject": "CNS", "teacher": "Prof.Mohini Thite", "type": "Lab" },
+    { "subject": "MiniProject", "teacher": "Prof.Mohini Thite", "type": "Lab" },
+    { "subject": "BT", "teacher": "Prof.Sanjay Deshmukh", "type": "Lecture" },
+    { "subject": "MASPT", "teacher": "Prof. Smita Wadekar", "type": "Lab" },
+    { "subject": "BT", "teacher": "Prof. Junaid Shaikh", "type": "Lab" },
+    { "subject": "IOT", "teacher": "Prof. Asma Shaikh", "type": "Lab" }
+  ],
+
+  "BE": [
+    { "subject": "NFT", "teacher": "Dr. Msdhu N.", "type": "Lecture" },
+    { "subject": "IF", "teacher": "Prof. Asha Kantekar", "type": "Lecture" },
+    { "subject": "Metaverse", "teacher": "Prof. Sarita Bopalkar", "type": "Lecture" },
+    { "subject": "IOTA", "teacher": "Prof. Sarita Bopalkar", "type": "Lab" },
+    { "subject": "Capstone Lab", "teacher": "Dr. Msdhu N.", "type": "Lab" },
+    { "subject": "EDM", "teacher": "Prof. Junaid Shaikh", "type": "Lecture" },
+    { "subject": "MejorProject", "teacher": "Prof. Sarita Bopalkar", "type": "Lab" }
+  ]
+
+}
