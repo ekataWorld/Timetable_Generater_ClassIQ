@@ -29,3 +29,10 @@ A web-based **Timetable Generator Project** designed for Computer Engineering co
 ---
 
 ## 📂 Project Structure
+TimeTable/
+│── index.html
+│── style.css
+│── script.js
+│── server.js
+│── models/
+│── package.json
